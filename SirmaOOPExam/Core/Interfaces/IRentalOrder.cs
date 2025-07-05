@@ -1,12 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using SirmaOOPExam.Core.Models;
 
 namespace SirmaOOPExam.Core.Interfaces
 {
     internal interface IRentalOrder
     {
+        int Id { get; }
+        Car Car { get; }
+
+        Customer Customer { get; }
+
+        DateOnly StartDate { get; }
+
+        int PeriodInDays { get; }
+
+        DateOnly ExpectedReturnDate { get; }
     }
 }
