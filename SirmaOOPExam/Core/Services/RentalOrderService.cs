@@ -2,11 +2,11 @@
 
 namespace SirmaOOPExam.Core.Services
 {
-    internal class RetailOrderService
+    internal class RentalOrderService
     {
         private List<IRentalOrder> _rentalOrders;
 
-        public RetailOrderService(List<IRentalOrder> rentalOrders)
+        public RentalOrderService(List<IRentalOrder> rentalOrders)
         {
             _rentalOrders = rentalOrders;
         }
