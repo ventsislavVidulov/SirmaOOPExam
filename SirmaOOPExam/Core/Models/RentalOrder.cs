@@ -4,6 +4,8 @@ namespace SirmaOOPExam.Core.Models
 {
     internal class RentalOrder : IRentalOrder
     {
+        // This class represents a rental order that conects the car to the customer and also makes available reservation of the car (a customer may want to reserve
+        // a car in the future time)
         public int Id { get; }
 
         public Car Car { get; private set; }
