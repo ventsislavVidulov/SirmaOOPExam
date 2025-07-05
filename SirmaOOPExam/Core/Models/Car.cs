@@ -4,32 +4,52 @@ namespace SirmaOOPExam.Core.Models
 {
     internal class Car : ICar
     {
-        private int _id;
-        private string _make;
-        private string _model;
-        private int _year;
-        private string _type;
-        private string _availability;
-        private string ?_customer;
+        public int Id { get; private set; }
+        public string Make { get; private set; }
+        public string Model { get; private set; }
+        public int Year { get; private set; }
+        public string Type { get; private set; }
+        public string Availability { get; private set; }
 
-        public Car(int id, string make, string model, int year, string type, string availability)
+        public Car(int id, string make, string model, int year, string type)
         {
-            _id = id;
-            _make = make;
-            _model = model;
-            _year = year;
-            _type = type;
-            _availability = availability;
+            Id = id;
+            Make = make;
+            Model = model;
+            Year = year;
+            Type = type;
+            Availability = "Available";
         }
 
-        public void UpdateCar(int id, string make, string model, int year, string type, string availability, string customer)
+        public void RentCar()
         {
-            _make = make;
-            _model = model;
-            _year = year;
-            _type = type;
-            _availability = availability;
-            _customer = customer;
+            Availability = "Rented";
+        }
+
+        public void ReturnCar()
+        {
+            if (Availability != "Retired")
+            {
+                Availability = "Available";
+            }
+        }
+
+        public void PutUnderMaintenance()
+        {
+            Availability = "Under Maintenance";
+        }
+
+        public void RetireCar()
+        {
+            Availability = "Retired";
+        }
+
+        public void UpdateCar(string make, string model, int year, string type)
+        {
+                Make = make;
+                Model = model;
+                Year = year;
+                Type = type;
         }
     }
 }
