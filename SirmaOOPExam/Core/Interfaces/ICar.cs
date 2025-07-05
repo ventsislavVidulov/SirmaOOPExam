@@ -1,14 +1,23 @@
-﻿using SirmaOOPExam.Core.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SirmaOOPExam.Core.Interfaces
+﻿namespace SirmaOOPExam.Core.Interfaces
 {
     internal interface ICar
-    { 
-        public void UpdateCar(int id, string make, string model, int year, string type, string availability, string customer);
+    {
+        int Id { get; }
+        string Make { get; }
+        string Model { get; }
+        int Year { get; }
+        string Type { get; }
+        string Availability { get; }
+
+        void RentCar();
+
+        void ReturnCar();
+
+        void PutUnderMaintenance();
+
+        void RetireCar();
+
+        void UpdateCar(string make, string model, int year, string type);
+
     }
 }
