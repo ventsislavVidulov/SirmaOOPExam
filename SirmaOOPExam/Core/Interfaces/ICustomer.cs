@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SirmaOOPExam.Core.Interfaces
+﻿namespace SirmaOOPExam.Core.Interfaces
 {
     internal interface ICustomer
     {
+        public int Id { get; }
+        public string Name { get; }
     }
 }
