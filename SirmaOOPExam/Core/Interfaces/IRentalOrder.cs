@@ -1,18 +1,12 @@
-﻿using SirmaOOPExam.Core.Models;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace SirmaOOPExam.Core.Interfaces
 {
-    internal interface IRentOrder
+    internal interface IRentalOrder
     {
-        int Id { get; }
-        Car Car { get; }
-
-        Customer Customer { get; }
-
-        DateTime RentalStartDate { get; }
-
-        int RentalDays { get; }
-
-        DateTime ExpectedReturnDate { get; }
     }
 }
