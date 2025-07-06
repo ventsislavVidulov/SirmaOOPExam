@@ -1,6 +1,6 @@
 ﻿namespace SirmaOOPExam.Core.Interfaces
 {
-    internal interface ICar
+    public interface ICar
     {
         int Id { get; }
         string Make { get; }
