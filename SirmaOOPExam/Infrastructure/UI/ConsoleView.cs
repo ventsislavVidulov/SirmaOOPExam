@@ -100,10 +100,10 @@ namespace SirmaOOPExam.Infrastructure.UserInterface
                 return;
             }
 
-            Console.WriteLine("Available Cars:");
+            ConsoleView.DisplayMessage("Available Cars:", ConsoleColor.Green);
             foreach (var car in cars)
             {
-                Console.WriteLine($"Car id: {car.Id}, {car.Make} {car.Model} {car.Year} {car.Type}");
+                ConsoleView.DisplayMessage($"Car id: {car.Id}, {car.Make} {car.Model} {car.Year} {car.Type}");
             }
         }
 
@@ -115,10 +115,10 @@ namespace SirmaOOPExam.Infrastructure.UserInterface
                 return;
             }
 
-            Console.WriteLine("Customers:");
+            ConsoleView.DisplayMessage("Customers:", ConsoleColor.Green);
             foreach (var customer in customers)
             {
-                Console.WriteLine($"Customer id: {customer.Id}, {customer.Name}");
+                ConsoleView.DisplayMessage($"Customer id: {customer.Id}, {customer.Name}");
             }
         }
         public static void PromptToContinue()
