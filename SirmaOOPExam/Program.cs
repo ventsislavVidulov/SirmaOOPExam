@@ -60,6 +60,7 @@ namespace SirmaOOPExam
             ManageOrdersMenu manageOrdersMenu = new();
             manageOrdersMenu.RegisterOption(new RentCarOption(rentalOrderService));
             manageOrdersMenu.RegisterOption(new ReturnCarOption(rentalOrderService));
+            manageOrdersMenu.RegisterOption(new DisplayAllOrders(rentalOrderService));
             manageOrdersMenu.RegisterOption(new BackToMainOption());
 
             while (!exit)
@@ -79,7 +80,7 @@ namespace SirmaOOPExam
                     {
                         currentMenu = "Manage Customers";
                     }
-                    else if (choise == 4)
+                    else if (choise == 9)
                     {
                         exit = true;
                     }
@@ -87,11 +88,11 @@ namespace SirmaOOPExam
                 else if (currentMenu == "Manage Orders")
                 {
                     choise = manageOrdersMenu.DisplayMenu();
-                    if (choise != 3)
+                    if (choise != 9)
                     {
                         manageOrdersMenu.ExecuteOption(choise);
                     }
-                    else if (choise == 3)
+                    else if (choise == 9)
                     {
                         currentMenu = "Main Menu";
                     }
