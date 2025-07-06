@@ -1,4 +1,5 @@
 ﻿using SirmaOOPExam.Infrastructure.FileManagment.Interfaces;
+using System.Reflection.Metadata;
 
 namespace SirmaOOPExam.Infrastructure.FileManagment.Utils
 {
@@ -24,8 +25,6 @@ namespace SirmaOOPExam.Infrastructure.FileManagment.Utils
         {
             var properties = typeof(T).GetProperties();
             object[] constructorParams = new object[properties.Length];
-            Console.WriteLine(properties.Length);
-            Console.WriteLine(valuesFromCSV.Length);
             try
             {
                 if (properties.Length != valuesFromCSV.Length)
@@ -36,9 +35,24 @@ namespace SirmaOOPExam.Infrastructure.FileManagment.Utils
                 for (int i = 0; i < properties.Length; i++)
                 {
                     var property = properties[i];
-                    var convertedValue = Convert.ChangeType(valuesFromCSV[i], property.PropertyType);
-                    constructorParams[i] = convertedValue;
-                    Console.WriteLine(convertedValue.GetType());
+                    //quick dirty fix
+                    if (property.PropertyType != typeof(DateOnly))
+                    {
+                        var convertedValue = Convert.ChangeType(valuesFromCSV[i], property.PropertyType);
+                        constructorParams[i] = convertedValue;
+                    }
+                    else
+                    {
+                        if (DateOnly.TryParse(valuesFromCSV[i], out DateOnly dateValue))
+                        {
+                            constructorParams[i] = dateValue;
+                        }
+                        else
+                        {
+                            throw new ArgumentException($"Invalid date format for property {property.Name}.");
+                        }
+
+                    }
                 }
 
                 return (T)Activator.CreateInstance(typeof(T), constructorParams)!;
