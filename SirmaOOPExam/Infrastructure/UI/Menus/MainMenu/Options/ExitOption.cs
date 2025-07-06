@@ -5,7 +5,7 @@ namespace SirmaOOPExam.Infrastructure.UI.Menus.MainMenu.Options
     internal class ExitOption : IMenuOption
     {
         public string MenuText { get; } = "Exit";
-        public int CommandNumber { get; } = 4;
+        public int CommandNumber { get; } = 9;
 
         public void Execute()
         {
