@@ -57,6 +57,21 @@ namespace SirmaOOPExam.Infrastructure.UserInterface
             }
         }
 
+        public static DateOnly GetDateInput(string prompt)
+        {
+            DateOnly date;
+            while (true)
+            {
+                DisplayMessage(prompt, ConsoleColor.Yellow);
+                string input = Console.ReadLine();
+                if (DateOnly.TryParse(input, out date))
+                {
+                    return date;
+                }
+                DisplayError("Invalid input. Please enter a valid date (e.g., 2023-10-01).");
+            }
+        }
+
         public static decimal GetDecimalInput(string prompt)
         {
             decimal value;
