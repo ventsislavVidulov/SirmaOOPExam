@@ -11,14 +11,14 @@ namespace SirmaOOPExam.Core.Models
         public string Type { get; private set; }
         public string Availability { get; private set; }
 
-        public Car(int id, string make, string model, int year, string type)
+        public Car(int id, string make, string model, int year, string type, string availability)
         {
             Id = id;
             Make = make;
             Model = model;
             Year = year;
             Type = type;
-            Availability = "Available";
+            Availability = availability;
         }
 
         public void RentCar()
