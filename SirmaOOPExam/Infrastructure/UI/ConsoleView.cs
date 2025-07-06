@@ -92,6 +92,20 @@ namespace SirmaOOPExam.Infrastructure.UserInterface
             }
         }
 
+        public static void DisplayCustomers(List<ICustomer> customers)
+        {
+            if (!customers.Any())
+            {
+                DisplayMessage("No customers available.", ConsoleColor.Yellow);
+                return;
+            }
+
+            Console.WriteLine("Customers:");
+            foreach (var customer in customers)
+            {
+                Console.WriteLine($"Customer id: {customer.Id}, {customer.Name}");
+            }
+        }
         public static void PromptToContinue()
         {
             Console.WriteLine();
