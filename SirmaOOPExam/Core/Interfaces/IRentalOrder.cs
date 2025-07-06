@@ -5,9 +5,9 @@ namespace SirmaOOPExam.Core.Interfaces
     internal interface IRentalOrder
     {
         int Id { get; }
-        Car Car { get; }
+        int CarID { get; }
 
-        Customer Customer { get; }
+        int CustomerID { get; }
 
         DateOnly StartDate { get; }
 
