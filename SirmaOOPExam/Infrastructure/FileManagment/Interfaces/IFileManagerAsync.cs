@@ -4,16 +4,16 @@ namespace SirmaOOPExam.Infrastructure.FileManagment.Interfaces
 {
     internal interface IFileManagerAsync
     {
-        Task<List<Car>> GetCarsFromFile();
+        Task<List<Car>> GetAllCarsFromFile();
 
-        Task<List<Customer>> GetCustomersFromFile();
+        Task<List<Customer>> GetAllCustomersFromFile();
 
-        Task<List<RentalOrder>> GetRentalOrdersFromFile();
+        Task<List<RentalOrder>> GetAllRentalOrdersFromFile();
 
-        Task SaveCarsToFile(List<Car> cars);
+        Task SaveAllCarsToFile(List<Car> cars);
 
-        Task SaveCustomersToFile(List<Customer> customers);
+        Task SaveAllCustomersToFile(List<Customer> customers);
 
-        Task SaveRentalOrdersToFile(List<RentalOrder> rentalOrders);
+        Task SaveAllRentalOrdersToFile(List<RentalOrder> rentalOrders);
     }
 }
