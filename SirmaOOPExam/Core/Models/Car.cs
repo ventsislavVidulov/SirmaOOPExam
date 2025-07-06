@@ -44,12 +44,13 @@ namespace SirmaOOPExam.Core.Models
             Availability = "Retired";
         }
 
-        public void UpdateCar(string make, string model, int year, string type)
+        public void UpdateCar(string make, string model, int year, string type, string availability)
         {
-                Make = make;
-                Model = model;
-                Year = year;
-                Type = type;
+            Make = make;
+            Model = model;
+            Year = year;
+            Type = type;
+            Availability = availability;
         }
     }
 }

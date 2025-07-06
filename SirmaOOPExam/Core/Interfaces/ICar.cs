@@ -17,7 +17,7 @@
 
         void RetireCar();
 
-        void UpdateCar(string make, string model, int year, string type);
+        void UpdateCar(string make, string model, int year, string type, string availability);
 
     }
 }

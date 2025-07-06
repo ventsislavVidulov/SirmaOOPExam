@@ -6,6 +6,6 @@
         ICar? GetCarById(int id);
         List<ICar> GetCars();
         void RemoveCarById(int id);
-        void UpdateCar(int id, string make, string model, int year, string type);
+        void UpdateCarById(int id, string make, string model, int year, string type, string availability);
     }
 }

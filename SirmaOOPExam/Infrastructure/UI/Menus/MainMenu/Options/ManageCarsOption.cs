@@ -4,7 +4,7 @@ namespace SirmaOOPExam.Infrastructure.UI.Menus.MainMenu.Options
 {
     internal class ManageCarsOption : IMenuOption
     {
-        public string MenuText { get; } = "Manage Cars (add, remove, update, list)";
+        public string MenuText { get; } = "Manage Cars (add, list, update)";
         public int CommandNumber { get; } = 2;
 
         public void Execute()

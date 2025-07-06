@@ -35,12 +35,12 @@ namespace SirmaOOPExam.Core.Services
             }
         }
 
-        public void UpdateCar(int id, string make, string model, int year, string type)
+        public void UpdateCarById(int id, string make, string model, int year, string type, string availability)
         {
             var car = GetCarById(id);
             if (car != null)
             {
-                car.UpdateCar(make, model, year, type);
+                car.UpdateCar(make, model, year, type, availability);
             }
         }
     }

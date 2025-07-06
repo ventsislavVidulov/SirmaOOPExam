@@ -16,9 +16,6 @@ namespace SirmaOOPExam
     {
         static async Task Main(string[] args)
         {
-            DateOnly.TryParse("1/1/1111", out DateOnly dateTime);
-            Console.WriteLine(dateTime);
-
             //initialize and inject the dependencies of FileManagerAsync
             CSVFileManipulator csvFileManipulator = new CSVFileManipulator();
             Converter converter = new Converter();
@@ -70,6 +67,7 @@ namespace SirmaOOPExam
             ManageCarsMenu manageCarsMenu = new();
             manageCarsMenu.RegisterOption(new AddCarOption(carsService));
             manageCarsMenu.RegisterOption(new ViewAllCarsOption(carsService));
+            manageCarsMenu.RegisterOption(new UpdateCarOption(carsService));
             manageCarsMenu.RegisterOption(new BackToMainOption());
 
             //main UI loop, it is partly OCP implemented

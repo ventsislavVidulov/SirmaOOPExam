@@ -103,7 +103,7 @@ namespace SirmaOOPExam.Infrastructure.UserInterface
             //ConsoleView.DisplayMessage("Available Cars:", ConsoleColor.White);
             foreach (var car in cars)
             {
-                ConsoleView.DisplayMessage($"Car id: {car.Id}, {car.Make} {car.Model} {car.Year} {car.Type}");
+                ConsoleView.DisplayMessage($"Car id: {car.Id}, {car.Make} {car.Model} {car.Year} {car.Type} {car.Availability}");
             }
         }
 
