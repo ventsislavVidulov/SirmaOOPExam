@@ -69,6 +69,7 @@ namespace SirmaOOPExam
 
             ManageCarsMenu manageCarsMenu = new();
             manageCarsMenu.RegisterOption(new AddCarOption(carsService));
+            manageCarsMenu.RegisterOption(new ViewAllCarsOption(carsService));
             manageCarsMenu.RegisterOption(new BackToMainOption());
 
             //main UI loop, it is partly OCP implemented

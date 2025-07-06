@@ -100,7 +100,7 @@ namespace SirmaOOPExam.Infrastructure.UserInterface
                 return;
             }
 
-            ConsoleView.DisplayMessage("Available Cars:", ConsoleColor.Green);
+            //ConsoleView.DisplayMessage("Available Cars:", ConsoleColor.White);
             foreach (var car in cars)
             {
                 ConsoleView.DisplayMessage($"Car id: {car.Id}, {car.Make} {car.Model} {car.Year} {car.Type}");
@@ -115,7 +115,7 @@ namespace SirmaOOPExam.Infrastructure.UserInterface
                 return;
             }
 
-            ConsoleView.DisplayMessage("Customers:", ConsoleColor.Green);
+            ConsoleView.DisplayMessage("Customers:", ConsoleColor.White);
             foreach (var customer in customers)
             {
                 ConsoleView.DisplayMessage($"Customer id: {customer.Id}, {customer.Name}");
