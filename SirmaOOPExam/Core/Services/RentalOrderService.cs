@@ -24,6 +24,10 @@ namespace SirmaOOPExam.Core.Services
         {
             return _customers;
         }
+        public List<IRentalOrder> GetAllRentalOrders()
+        {
+            return _rentalOrders;
+        }
         public void AddRentalOrder(IRentalOrder rentalOrder)
         {
             _rentalOrders.Add(rentalOrder);
@@ -33,11 +37,6 @@ namespace SirmaOOPExam.Core.Services
         {
            _cars.FirstOrDefault(c => c.Id == carId).ReturnCar();
         }
-        public List<IRentalOrder> GetAllRentalOrders()
-        {
-            return _rentalOrders;
-        }
-
         public IRentalOrder? GetRentalOrderById(int id)
         {
             return _rentalOrders.FirstOrDefault(ro => ro.Id == id);
