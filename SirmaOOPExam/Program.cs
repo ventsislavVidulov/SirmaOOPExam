@@ -3,7 +3,6 @@ using SirmaOOPExam.Core.Models;
 using SirmaOOPExam.Core.Services;
 using SirmaOOPExam.Infrastructure.FileManagment;
 using SirmaOOPExam.Infrastructure.FileManagment.Utils;
-using SirmaOOPExam.Infrastructure.UI.Menus;
 using SirmaOOPExam.Infrastructure.UI.Menus.MainMenu;
 using SirmaOOPExam.Infrastructure.UI.Menus.MainMenu.Options;
 using SirmaOOPExam.Infrastructure.UI.Menus.ManageOrders;
@@ -56,15 +55,12 @@ namespace SirmaOOPExam
             mainMenu.RegisterOption(new ManageOrdersOption());
             mainMenu.RegisterOption(new ManageCarsOption());
             mainMenu.RegisterOption(new ManageCustomersOption());
+            mainMenu.RegisterOption(new ExitOption());
 
             ManageOrdersMenu manageOrdersMenu = new();
             manageOrdersMenu.RegisterOption(new RentCarOption(rentalOrderService));
-            manageOrdersMenu.RegisterOption(new ReturnCarOption());
+            manageOrdersMenu.RegisterOption(new ReturnCarOption(rentalOrderService));
             manageOrdersMenu.RegisterOption(new BackToMainOption());
-
-            MenuOrchestartor menuOrchestartor = new MenuOrchestartor();
-            menuOrchestartor.RegisterMenu(mainMenu);
-            menuOrchestartor.RegisterMenu(manageOrdersMenu);
 
             while (!exit)
             {
