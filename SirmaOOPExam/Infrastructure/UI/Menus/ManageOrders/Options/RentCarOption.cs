@@ -40,6 +40,7 @@ namespace SirmaOOPExam.Infrastructure.UI.Menus.ManageOrders.Options
             }
             _rentalOrderService.AddRentalOrder(new RentalOrder(lattOrderId, carId, customerId, startDate, endDate));
             cars.FirstOrDefault(c => c.Id == carId).RentCar();
+            ConsoleView.DisplayMessage($"Car with ID {carId} has been successfully rented to customer with ID {customerId} from {startDate} to {endDate}.", ConsoleColor.Green);
         }
     }
 }
