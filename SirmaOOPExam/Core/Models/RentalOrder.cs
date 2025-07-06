@@ -2,8 +2,8 @@
 
 namespace SirmaOOPExam.Core.Models
 {
-        //this class represents a rental order that conects the car to the customer and also makes available reservation of
-        //the car (a customer may want to reserve a car in the future time)
+    //this class represents a rental order that conects the car to the customer and also makes available reservation of
+    //the car (a customer may want to reserve a car in the future time)
     internal class RentalOrder : IRentalOrder
     {
         public int Id { get; }
@@ -14,7 +14,7 @@ namespace SirmaOOPExam.Core.Models
 
         public DateOnly StartDate { get; }
 
-        public DateOnly ExpectedReturnDate { get; private set}
+        public DateOnly ExpectedReturnDate { get; private set; }
 
         public RentalOrder(
             int id, 
