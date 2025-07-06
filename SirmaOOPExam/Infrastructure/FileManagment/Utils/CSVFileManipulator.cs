@@ -4,10 +4,11 @@ namespace SirmaOOPExam.Infrastructure.FileManagment.Utils
 {
     internal class CSVFileManipulator : ICSVFileManipulator
     {
-        //async file reading and writing methods for CSV files
+        //async file read method that reads CSV file line by line and returns a list of string arrays,
+        //where each array represents a row in the CSV file
         public async Task<List<string[]>> ReadCsvAsync(string filePath)
         {
-            // List to store all rows read from the CSV
+            //list to store all rows read from the CSV
             List<string[]> csvData = new List<string[]>();
 
             try
@@ -40,6 +41,7 @@ namespace SirmaOOPExam.Infrastructure.FileManagment.Utils
             return csvData;
         }
 
+        //async file write method that takes a list of string arrays and writes them to a CSV file
         public async Task WriteCsvAsync(string filePath, List<string[]> data)
         {
             try
