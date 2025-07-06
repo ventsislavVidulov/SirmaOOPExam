@@ -110,6 +110,10 @@ namespace SirmaOOPExam.Infrastructure.FileManagment
             List<string[]> rawData = new List<string[]>();
             foreach (var order in rentalOrders)
             {
+                if (order == null)
+                {
+                    continue;
+                }
                 rawData.Add(_converter.ConvertToStringArray(order));
             }
             await _cSVFileManipulator.WriteCsvAsync(_filePathRentalOrder, rawData);
