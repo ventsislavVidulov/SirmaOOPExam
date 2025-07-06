@@ -2,7 +2,7 @@
 
 namespace SirmaOOPExam.Core.Models
 {
-    internal class Car : ICar
+    public class Car : ICar
     {
         public int Id { get; private set; }
         public string Make { get; private set; }
