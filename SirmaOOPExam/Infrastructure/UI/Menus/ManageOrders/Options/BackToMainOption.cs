@@ -5,7 +5,7 @@ namespace SirmaOOPExam.Infrastructure.UI.Menus.ManageOrders.Options
     internal class BackToMainOption : IMenuOption
     {
         public string MenuText { get; } = "Back to Main Menu";
-        public int CommandNumber { get; } = 3;
+        public int CommandNumber { get; } = 9;
 
         public void Execute()
         {
