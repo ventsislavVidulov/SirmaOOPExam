@@ -20,7 +20,7 @@ namespace SirmaOOPExam.Infrastructure.UI.Menus.ManageOrders
             {
                 ConsoleView.DisplayOption(menuItem);
             }
-            int choice = ConsoleView.GetIntegerInput($"Your choice(1-{Options.Count}): ");
+            int choice = ConsoleView.GetIntegerInput($"Your choice: ");
             return choice;
         }
 
