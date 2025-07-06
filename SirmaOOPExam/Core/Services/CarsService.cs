@@ -1,4 +1,5 @@
 ﻿using SirmaOOPExam.Core.Interfaces;
+using SirmaOOPExam.Infrastructure.UserInterface;
 
 namespace SirmaOOPExam.Core.Services
 {
@@ -31,7 +32,11 @@ namespace SirmaOOPExam.Core.Services
             var car = GetCarById(id);
             if (car != null)
             {
-                _cars.Remove(car);
+                car.RetireCar();
+            }
+            else
+            {
+                ConsoleView.DisplayError($"Car with ID {id} not found.");
             }
         }
 
@@ -41,6 +46,10 @@ namespace SirmaOOPExam.Core.Services
             if (car != null)
             {
                 car.UpdateCar(make, model, year, type, availability);
+            }
+            else
+            {
+                ConsoleView.DisplayError($"Car with ID {id} not found.");
             }
         }
     }
