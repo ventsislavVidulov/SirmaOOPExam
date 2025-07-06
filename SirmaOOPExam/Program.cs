@@ -5,6 +5,8 @@ using SirmaOOPExam.Infrastructure.FileManagment;
 using SirmaOOPExam.Infrastructure.FileManagment.Utils;
 using SirmaOOPExam.Infrastructure.UI.Menus.MainMenu;
 using SirmaOOPExam.Infrastructure.UI.Menus.MainMenu.Options;
+using SirmaOOPExam.Infrastructure.UI.Menus.ManageCars;
+using SirmaOOPExam.Infrastructure.UI.Menus.ManageCars.Options;
 using SirmaOOPExam.Infrastructure.UI.Menus.ManageOrders;
 using SirmaOOPExam.Infrastructure.UI.Menus.ManageOrders.Options;
 
@@ -45,8 +47,10 @@ namespace SirmaOOPExam
 
             //initialize the rental order service with the loaded data
             IRentalOrderService rentalOrderService = new RentalOrderService(rentalOrders, cars, customers);
+            //initialize the cars service with the loaded data
+            ICarsService carsService = new CarsService(cars);
 
-            //initialize the menu options and menus
+            //initialize the menu options and menus and register all options
             int choise = 0;
             bool exit = false;
             string currentMenu = "Main Menu";
@@ -63,6 +67,11 @@ namespace SirmaOOPExam
             manageOrdersMenu.RegisterOption(new DisplayAllOrders(rentalOrderService));
             manageOrdersMenu.RegisterOption(new BackToMainOption());
 
+            ManageCarsMenu manageCarsMenu = new();
+            manageCarsMenu.RegisterOption(new AddCarOption(carsService));
+            manageCarsMenu.RegisterOption(new BackToMainOption());
+
+            //main UI loop, it is partly OCP implemented
             while (!exit)
             {
                 if (currentMenu == "Main Menu")
@@ -91,6 +100,18 @@ namespace SirmaOOPExam
                     if (choise != 9)
                     {
                         manageOrdersMenu.ExecuteOption(choise);
+                    }
+                    else if (choise == 9)
+                    {
+                        currentMenu = "Main Menu";
+                    }
+                }
+                else if (currentMenu == "Manage Cars")
+                {
+                    choise = manageCarsMenu.DisplayMenu();
+                    if (choise != 9)
+                    {
+                        manageCarsMenu.ExecuteOption(choise);
                     }
                     else if (choise == 9)
                     {
