@@ -29,6 +29,10 @@ namespace SirmaOOPExam.Core.Services
             _rentalOrders.Add(rentalOrder);
         }
 
+        public void ReturnCar(int carId)
+        {
+           _cars.FirstOrDefault(c => c.Id == carId).ReturnCar();
+        }
         public List<IRentalOrder> GetAllRentalOrders()
         {
             return _rentalOrders;
