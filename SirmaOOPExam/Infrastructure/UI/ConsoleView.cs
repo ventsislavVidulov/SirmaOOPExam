@@ -89,7 +89,7 @@ namespace SirmaOOPExam.Infrastructure.UserInterface
 
         public static void DisplayOption(IMenuOption option)
         {
-            DisplayMessage($"{option.CommandNumber}. {option.MenuText}", ConsoleColor.Green);
+            DisplayMessage($"{option.CommandNumber}. {option.MenuText}", ConsoleColor.White);
         }
 
         public static void DisplayCars(List<ICar> cars)
